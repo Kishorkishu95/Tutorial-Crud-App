@@ -7,8 +7,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Data;
+
 @Entity
 @Table(name = "tutorials")
+@Data
 public class Tutorial {
 	
 	@Id
@@ -23,15 +26,13 @@ public class Tutorial {
 	
 	@Column(name = "published")
 	private boolean published;
+	
+	
 
 	public Tutorial(Long id, String title, String description, boolean published) {
 		this.title = title;
 		this.description = description;
 		this.published = published;
-	}
-
-	public Tutorial() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public Long getId() {
@@ -71,6 +72,12 @@ public class Tutorial {
 		return "Tutorial [id=" + id + ", title=" + title + ", description=" + description + ", published=" + published
 				+ "]";
 	}
+
+	public Tutorial() {
+		// TODO Auto-generated constructor stub
+	}
+
+	
 	
 	
 
